@@ -1,6 +1,9 @@
 # Template Micro Service Node Express
 
-node application with modular approach for running multiple services
+Node application with modular approach for running multiple services. 
+It also implements logger using Pino.js (advanced logger for node js with seprate process).
+It also implements module for env variables.
+It also implements event processor class for registring events for each API endpoint defined in config file of each service.
 
 ---
 ## Requirements
