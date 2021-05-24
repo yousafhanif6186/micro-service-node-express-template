@@ -1,6 +1,6 @@
-# Template Node Express App
+# Template Micro Service Node Express
 
-node application with modular approach
+node application with modular approach for running multiple services
 
 ---
 ## Requirements
@@ -28,13 +28,13 @@ If the installation was successful, you should be able to run the following comm
 
 ## Install
 
-    $ git clone https://github.com/yousafhanif6186/express-node-template.git
-    $ cd express-node-template
+    $ git clone https://github.com/yousafhanif6186/micro-service-node-express-template.git
+    $ cd micro-service-node-express-template
 		- $ $ npm install
 
 ## Configure app
 
-	$ cd express-node-template
+	$ cd micro-service-node-express-template
 		- $ cd template-service and run $ mkdir logs
 
 
