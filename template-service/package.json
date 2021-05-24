@@ -1,0 +1,27 @@
+{
+  "name": "template-service",
+  "version": "1.0.0",
+  "description": "Template Service",
+  "main": "lib/worker.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "NODE_PATH=${PWD}/.. node --inspect=127.0.0.1:9229 lib/worker.js",
+    "start-forever": "forever start --minUptime 1000 --spinSleepTime 1000 lib/worker.js",
+    "stop-forever": "forever stop lib/worker.js",
+    "test": "mocha test/index.js --recursive --timeout 2000000 || true",
+    "entites-test": "node test/entites-test.js",
+    "lint": "eslint . && jshint --exclude ./node_modules ."
+  },
+  "author": "Muhammad Yousaf <yousafhanif6186@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}

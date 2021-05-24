@@ -1,0 +1,41 @@
+{
+    "listener": {
+        "port": 3000,
+        "tls": {
+            "enable": true,
+            "port": 3000,
+            "key": "conf/certs/key.pem",
+            "cert": "conf/certs/server.crt"
+        }
+    },
+    "logging": {
+        "console": {
+            "enable": true,
+            "level": "debug",
+            "prettyOptions": {
+                "colorize": true,
+                "translateTime": "yyyy-dd-mm, h:MM:ss TT",
+                "ignore": "hostname,pid,filename"
+            }
+        },
+        "file": {
+            "enable": true,
+            "level": "debug",
+            "logpath": "logs/"
+        }
+    },
+    "apiEndpoints": {
+        "users": {
+            "basePath": "/api",
+            "controllers": [{
+                    "name": "collection",
+                    "path": "/user"
+                },
+                {
+                    "name": "instance",
+                    "path": "/user/:user_id"
+                }
+            ]
+        }
+    }
+}

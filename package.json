@@ -1,0 +1,12 @@
+{
+  "name": "template-node-project",
+  "version": "1.0.0",
+  "description": "api layer",
+  "main": "app.js",
+  "scripts": {
+    "postinstall": "node postinstall.js"
+  },
+  "author": "Muhammad Yousaf <yousafhanif6186@gmail.com>",
+  "license": "ISC",
+  "dependencies": {}
+}

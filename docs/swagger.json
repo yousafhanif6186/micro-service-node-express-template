@@ -1,0 +1,257 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0.0",
+    "title": "APIs"
+  },
+  "host": "127.0.0.1:3000",
+  "basePath": "/api",
+  "tags": [],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/user": {
+      "get": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Get user details.",
+        "description": "Use to get a listing of user.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation, a JSON array of user",
+            "schema": {
+              "properties": {
+                "statusCode": {
+                  "type": "integer"
+                },
+                "_metadata": {
+                  "$ref": "#/definitions/PageMetaData"
+                },
+                "listings": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Use to create a new user.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+          "in": "body",
+          "name": "body",
+          "description": "",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "allOf": [{
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "number"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/definitions/User"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/user/{user_id}": {
+      "get": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Get a selected user.",
+        "description": "Use to get a selected user.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+          "name": "user_id",
+          "in": "path",
+          "description": "User-Id of user to get.",
+          "required": true,
+          "type": "string"
+        }],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "allOf": [{
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "number"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/definitions/User"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Use to update user.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "user_id",
+            "in": "path",
+            "description": "User-Id of user to update.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "properties": {
+                "statusCode": {
+                  "type": "integer"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User Management"
+        ],
+        "summary": "Used to delete a specific user.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+          "name": "user_id",
+          "in": "path",
+          "description": "User-Id of user to delete.",
+          "required": true,
+          "type": "string"
+        }],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "properties": {
+                "statusCode": {
+                  "type": "integer"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "PageMetaData": {
+      "type": "object",
+      "properties": {
+        "totalPages": {
+          "type": "number"
+        },
+        "totalResults": {
+          "type": "number"
+        },
+        "currentPage": {
+          "type": "number"
+        },
+        "pageSize": {
+          "type": "number"
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number"
+        },
+        "statusMessage": {
+          "type": "string"
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "number"
+        },
+        "user_name": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "parameters": {},
+  "responses": {
+    "NotFound": {
+      "description": "The specified resource was not found",
+      "schema": {
+        "$ref": "#/definitions/Error"
+      }
+    }
+  }
+}

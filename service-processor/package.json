@@ -1,0 +1,21 @@
+{
+  "name": "service-processor",
+  "version": "1.0.0",
+  "description": "Service processor",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammad Yousaf <yousafhanif6186@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "unidecode": "^0.1.8",
+    "multer": "^1.4.1",
+    "express": "^4.16.4",
+    "node-uuid": "^1.4.8",
+    "auth-header": "^1.0.0"
+  }
+}
